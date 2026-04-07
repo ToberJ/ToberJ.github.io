@@ -13,14 +13,6 @@ My research interests lie in **computer vision** and **embodied AI / robot learn
 
 ## Publications
 
-<div class="section-header">
-  <span style="font-size: 0.85em; color: #888;">(* denotes equal contribution)</span>
-  <div class="view-toggle">
-    <button id="selectedBtn" class="active">Selected</button>
-    <button id="allBtn">All Publications</button>
-  </div>
-</div>
-
 <div id="publicationsList" class="publications-list">
   <!-- Publications will be loaded here dynamically -->
 </div>
