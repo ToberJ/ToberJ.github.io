@@ -29,12 +29,12 @@ My research interests lie in **computer vision** and **embodied AI / robot learn
 <ul class="education-list">
   <li>
     <strong>Stanford University</strong>, <em>2026&ndash;2028 (Expected)</em><br>
-    <em>Master of Science in Computer Science</em>
+    <em>M.S. in Computer Science</em>
   </li>
   <li>
     <strong>University of Washington</strong>, <em>2022&ndash;2026</em><br>
-    <em>Bachelor of Science in Computer Science</em><br>
-    <em>Bachelor of Science in Applied Mathematics</em>
+    <em>B.S. in Computer Science</em><br>
+    <em>B.S. in Applied &amp; Computational Mathematics</em>
   </li>
 </ul>
 
