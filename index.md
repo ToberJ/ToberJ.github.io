@@ -9,6 +9,7 @@ I am an undergraduate student at the University of Washington, advised by Prof. 
 My research interests lie in **computer vision** and **embodied AI / robot learning**, with a focus on building perception and decision-making systems that work robustly in the real world.
 
 ## News
+- **[2026-4]** [WildDet3D](https://github.com/allenai/WildDet3D) released! Promptable 3D detection in the wild with text, box, and point prompts. Try the [demo](https://huggingface.co/spaces/allenai/WildDet3D) or download the [iPhone app](https://apps.apple.com/us/app/wilddet3d/id6760861157).
 - **[2026-2]** Our work [SOC](https://arxiv.org/abs/2510.09110) is accepted to CVPR 2026. See you in Denver!
 
 ## Publications

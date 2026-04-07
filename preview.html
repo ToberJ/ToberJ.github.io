@@ -172,6 +172,25 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
+    .publication-video {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .publication-video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 8px;
+    }
+
     .publication-content { display: flex; flex-direction: column; gap: 0.5rem; }
     .publication-title { font-size: 1rem; font-weight: 600; color: #222; line-height: 1.4; }
     .publication-title a { color: inherit; }
@@ -313,6 +332,7 @@
 
         <h2>News</h2>
         <ul>
+          <li><strong>[2026-4]</strong> <a href="https://github.com/allenai/WildDet3D">WildDet3D</a> released! Promptable 3D detection in the wild with text, box, and point prompts. Try the <a href="https://huggingface.co/spaces/allenai/WildDet3D">demo</a> or download the <a href="https://apps.apple.com/us/app/wilddet3d/id6760861157">iPhone app</a>.</li>
           <li><strong>[2026-2]</strong> Our work <a href="https://arxiv.org/abs/2510.09110">SOC</a> is accepted to CVPR 2026. See you in Denver!</li>
         </ul>
 

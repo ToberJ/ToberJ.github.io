@@ -79,7 +79,27 @@ function createPublicationHTML(pub) {
         .join('');
 
     let imageHtml = '';
-    if (pub.image) {
+    if (pub.video) {
+        let videoId = '';
+        if (pub.video.includes('youtube.com') || pub.video.includes('youtu.be')) {
+            try {
+                const urlParams = new URLSearchParams(new URL(pub.video).search);
+                videoId = urlParams.get('v') || pub.video.split('/').pop().split('?')[0];
+            } catch (e) {
+                videoId = pub.video.split('/').pop().split('?')[0];
+            }
+        }
+        if (videoId) {
+            imageHtml = `<div class="publication-image publication-video">
+                           <iframe
+                             src="https://www.youtube.com/embed/${videoId}"
+                             frameborder="0"
+                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                             allowfullscreen>
+                           </iframe>
+                         </div>`;
+        }
+    } else if (pub.image) {
         imageHtml = `<div class="publication-image">
                        <img src="${pub.image}" alt="${pub.title}">
                      </div>`;
