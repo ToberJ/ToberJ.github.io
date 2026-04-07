@@ -1,7 +1,7 @@
 {
   "publications": [
     {
-      "id": "soc",
+      "id": "sos",
       "title": "Synthetic Object Compositions for Scalable and Accurate Learning in Detection, Segmentation, and Grounding",
       "authors": [
         "Weikai Huang",
@@ -15,15 +15,19 @@
       ],
       "venue": "CVPR",
       "year": "2026",
-      "image": "img/papers/soc.png",
+      "image": "img/papers/sos.png",
       "arxiv_id": "2510.09110",
+      "github_repo": "weikaih04/Synthetic-Detection-Segmentation-Grounding-Data",
       "links": {
         "arxiv": "https://arxiv.org/abs/2510.09110",
+        "website": "https://github.com/weikaih04/Synthetic-Detection-Segmentation-Grounding-Data",
         "code": "https://github.com/weikaih04/Synthetic-Detection-Segmentation-Grounding-Data",
         "huggingface": "https://huggingface.co/collections/weikaih/sos-synthetic-object-segments-improves-detection-segmentat-682679751d20faa20800033c"
       },
       "selected": true,
-      "tldr": "1M diverse and dense-annotated synthetic images composed by 20M synthetic objects—boost GroundingDINO and Mask2Former on LVIS, gRefCOCO. First synthetic dataset surpassing real datasets across different models and benchmarks."
+      "tldr": "1M diverse and dense-annotated synthetic images composed by 20M synthetic object—boost GroundingDINO, Mask2Former on LVIS, gRefCOCO. First synthetic dataset surpassing real datasets in different models / benchmarks.",
+      "github_stars": 80,
+      "citations": 0
     }
   ]
 }
