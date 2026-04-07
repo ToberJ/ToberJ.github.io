@@ -4,7 +4,7 @@ layout: default
 
 # About
 
-I am an undergraduate student at the University of Washington, advised by Prof. <a href="http://www.ranjaykrishna.com/index.html">Ranjay Krishna</a> and PhD student <a href="https://jieyuz2.github.io/">Jieyu Zhang</a> at <a href="https://raivn.cs.washington.edu/">UW CSE RAIVN Lab</a>. Incoming MSCS at Stanford University.
+I am an undergraduate student at the University of Washington, advised by Prof. <a href="http://www.ranjaykrishna.com/index.html">Ranjay Krishna</a> and PhD student <a href="https://jieyuz2.github.io/">Jieyu Zhang</a> at <a href="https://raivn.cs.washington.edu/">UW CSE RAIVN Lab</a>. I am also actively involved with research at the <a href="https://allenai.org/">Allen Institute for AI (Ai2)</a>. Incoming MSCS at Stanford University.
 
 My research interests lie in **computer vision** and **embodied AI / robot learning**, with a focus on building perception and decision-making systems that work robustly in the real world.
 
