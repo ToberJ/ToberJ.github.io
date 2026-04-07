@@ -31,4 +31,4 @@ My research interests lie in **computer vision** and **embodied AI / robot learn
 </ul>
 
 ## Experience
-- **Undergraduate Researcher**, UW CSE RAIVN Lab, 2025–Present
+- **Undergraduate Researcher**, UW CSE RAIVN Lab, 2024–Present
