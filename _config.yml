@@ -2,3 +2,12 @@ theme: jekyll-theme-minimal
 title: Taoyang Jia
 description: Undergrad @ UW CSE RAIVN Lab
 logo: img/taoyang.jpg
+
+author:
+  name: Taoyang Jia
+  avatar: img/taoyang.jpg
+  bio: "Incoming MSCS @ Stanford<br>Undergrad @ UW CSE RAIVN Lab"
+  email: toberjia@cs.washington.edu
+  googlescholar: https://scholar.google.com/
+  github: ToberJ
+  linkedin: https://www.linkedin.com/in/taoyang-jia-84842323a/

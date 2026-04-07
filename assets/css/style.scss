@@ -24,6 +24,177 @@ body {
   padding: 40px 24px 60px;
 }
 
+/* ==========================================================================
+   Two-column site layout: left sidebar + main content
+   ========================================================================== */
+.site-wrapper {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 32px 60px;
+  display: flex;
+  align-items: flex-start;
+  gap: 56px;
+}
+
+.sidebar {
+  flex: 0 0 240px;
+  width: 240px;
+  position: sticky;
+  top: 40px;
+  align-self: flex-start;
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  max-width: 760px;
+}
+
+.main-content h1:first-child,
+.main-content h2:first-child,
+.main-content > article > *:first-child {
+  margin-top: 0;
+}
+
+/* Sidebar author profile */
+.author-profile {
+  display: block;
+}
+
+.author__avatar {
+  margin-bottom: 1rem;
+}
+
+.author__avatar img {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 4px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.author__name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0.4rem 0 0.4rem;
+  line-height: 1.25;
+}
+
+.author__bio {
+  font-size: 0.92rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+
+.author__urls {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.author__urls li {
+  margin: 0 0 8px;
+}
+
+.author__urls a {
+  display: inline-flex;
+  align-items: center;
+  color: #4b5563;
+  text-decoration: none;
+  font-size: 0.93rem;
+  transition: color 0.15s ease;
+}
+
+.author__urls a:hover {
+  color: #2563eb;
+  font-weight: 400;
+}
+
+.author__urls i {
+  width: 22px;
+  margin-right: 10px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 1rem;
+  transition: color 0.15s ease;
+}
+
+.author__urls a:hover i {
+  color: #2563eb;
+}
+
+@media screen and (max-width: 1023px) {
+  .site-wrapper {
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 24px 48px;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .author-profile {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+  }
+
+  .author__avatar {
+    flex: 0 0 130px;
+    margin: 0;
+  }
+
+  .author__avatar img {
+    max-width: 130px;
+  }
+
+  .author__name {
+    margin-top: 0;
+  }
+
+  .author__urls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.1rem;
+    margin-top: 0.6rem;
+  }
+
+  .author__urls li {
+    margin: 0;
+  }
+
+  .main-content {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .site-wrapper {
+    padding: 24px 16px 40px;
+  }
+
+  .author-profile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .author__urls {
+    gap: 0.3rem 1rem;
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   color:#222;
   margin:0 0 20px;
@@ -68,59 +239,6 @@ a small {
 
 a:hover small {
   color:#777;
-}
-
-/* Profile section */
-.profile-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 30px;
-  margin-bottom: 1.5rem;
-}
-
-.profile-text {
-  flex: 1;
-}
-
-.profile-text h1 {
-  margin-bottom: 0.3rem;
-}
-
-.profile-text .subtitle {
-  color: #666;
-  font-size: 0.95rem;
-  margin-bottom: 0.8rem;
-}
-
-.profile-text .bio {
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: #374151;
-  margin-bottom: 0.8rem;
-}
-
-.profile-links {
-  font-size: 0.92rem;
-  margin-bottom: 0;
-}
-
-.profile-links a {
-  color: #267CB9;
-  text-decoration: none;
-}
-
-.profile-links a:hover {
-  text-decoration: underline;
-}
-
-.profile-photo {
-  flex-shrink: 0;
-  width: 180px;
-}
-
-.profile-photo img {
-  width: 100%;
-  border-radius: 8px;
 }
 
 /* Section content text */
@@ -193,16 +311,6 @@ hr {
 @media screen and (max-width: 600px) {
   .container {
     padding: 24px 16px 40px;
-  }
-
-  .profile-header {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .profile-photo {
-    width: 140px;
-    order: -1;
   }
 }
 

@@ -10,6 +10,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Taoyang Jia</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
   <style>
     body {
       background-color: #fff;
@@ -23,11 +25,78 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-    .container {
-      max-width: 800px;
+
+    /* Two-column layout */
+    .site-wrapper {
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 40px 24px 60px;
+      padding: 40px 32px 60px;
+      display: flex;
+      align-items: flex-start;
+      gap: 56px;
     }
+    .sidebar {
+      flex: 0 0 240px;
+      width: 240px;
+      position: sticky;
+      top: 40px;
+      align-self: flex-start;
+    }
+    .main-content {
+      flex: 1;
+      min-width: 0;
+      max-width: 760px;
+    }
+    .main-content > article > *:first-child { margin-top: 0; }
+
+    /* Sidebar author profile */
+    .author-profile { display: block; }
+    .author__avatar { margin-bottom: 1rem; }
+    .author__avatar img {
+      display: block;
+      width: 100%;
+      max-width: 200px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 50%;
+      padding: 4px;
+      border: 1px solid #e5e7eb;
+      background: #fff;
+    }
+    .author__name {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin: 0.4rem 0 0.4rem;
+      line-height: 1.25;
+    }
+    .author__bio {
+      font-size: 0.92rem;
+      color: #6b7280;
+      line-height: 1.5;
+      margin: 0 0 1rem;
+    }
+    .author__urls { list-style: none; padding: 0; margin: 1rem 0 0; }
+    .author__urls li { margin: 0 0 8px; }
+    .author__urls a {
+      display: inline-flex;
+      align-items: center;
+      color: #4b5563;
+      text-decoration: none;
+      font-size: 0.93rem;
+      transition: color 0.15s ease;
+    }
+    .author__urls a:hover { color: #2563eb; }
+    .author__urls i {
+      width: 22px;
+      margin-right: 10px;
+      text-align: center;
+      color: #6b7280;
+      font-size: 1rem;
+      transition: color 0.15s ease;
+    }
+    .author__urls a:hover i { color: #2563eb; }
+
     h1, h2, h3, h4, h5, h6 { color: #222; margin: 0 0 20px; }
     p, ul, ol { margin: 0 0 20px; }
     h1, h2, h3 { line-height: 1.1; }
@@ -36,15 +105,6 @@
     a { color: #267CB9; text-decoration: none; }
     a:hover { color: #069; }
     strong { color: #222; font-weight: 700; }
-
-    .profile-header { display: flex; align-items: flex-start; gap: 30px; margin-bottom: 1.5rem; }
-    .profile-text { flex: 1; }
-    .profile-text h1 { margin-bottom: 0.3rem; }
-    .profile-text .subtitle { color: #666; font-size: 0.95rem; margin-bottom: 0.8rem; }
-    .profile-text .bio { font-size: 0.95rem; line-height: 1.65; color: #374151; margin-bottom: 0.8rem; }
-    .profile-links { font-size: 0.92rem; margin-bottom: 0; }
-    .profile-links a { color: #267CB9; }
-    .profile-links a:hover { text-decoration: underline; }
 
     h2 ~ ul, h2 ~ p { font-size: 0.95rem; line-height: 1.65; }
 
@@ -183,9 +243,39 @@
     }
     .tldr-toggle:hover { background: #f3f4f6; }
 
+    @media screen and (max-width: 1023px) {
+      .site-wrapper {
+        flex-direction: column;
+        gap: 32px;
+        padding: 32px 24px 48px;
+      }
+      .sidebar {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 auto;
+      }
+      .author-profile {
+        display: flex;
+        align-items: center;
+        gap: 1.4rem;
+      }
+      .author__avatar { flex: 0 0 130px; margin: 0; }
+      .author__avatar img { max-width: 130px; }
+      .author__name { margin-top: 0; }
+      .author__urls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem 1.1rem;
+        margin-top: 0.6rem;
+      }
+      .author__urls li { margin: 0; }
+      .main-content { max-width: 100%; }
+    }
+
     @media screen and (max-width: 600px) {
-      .container { padding: 24px 16px 40px; }
-      .profile-header { flex-direction: column; gap: 20px; }
+      .site-wrapper { padding: 24px 16px 40px; }
+      .author-profile { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .section-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
       .publication-item { grid-template-columns: 1fr; gap: 1rem; }
       .publication-tldr { padding-bottom: 2.5rem; }
@@ -193,47 +283,59 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <article>
-      <div class="profile-header">
-        <div class="profile-text">
-          <h1><span style="font-weight: 700;">Taoyang</span> Jia</h1>
-          <p class="subtitle">Undergrad @ UW CSE RAIVN Lab</p>
-          <p class="bio">I am an undergraduate student at the University of Washington, advised by Prof. <a href="http://www.ranjaykrishna.com/index.html">Ranjay Krishna</a> and PhD student <a href="https://jieyuz2.github.io/">Jieyu Zhang</a> at <a href="https://raivn.cs.washington.edu/">UW CSE RAIVN Lab</a>. Incoming MSCS at Stanford University.</p>
-          <p class="bio">My research interests lie in <strong>computer vision</strong> and <strong>embodied AI / robot learning</strong>, with a focus on building perception and decision-making systems that work robustly in the real world.</p>
-          <p class="profile-links"><a href="mailto:toberjia@cs.washington.edu">Email</a> / <a href="https://github.com/ToberJ" target="_blank">GitHub</a> / <a href="https://scholar.google.com/" target="_blank">Google Scholar</a></p>
+  <div class="site-wrapper">
+    <aside class="sidebar">
+      <div class="author-profile">
+        <div class="author__avatar">
+          <img src="img/taoyang.jpg" alt="Taoyang Jia" onerror="this.onerror=null;this.src='img/avatar-placeholder.svg';">
         </div>
+        <h3 class="author__name">Taoyang Jia</h3>
+        <p class="author__bio">Incoming MSCS @ Stanford<br>Undergrad @ UW CSE RAIVN Lab</p>
+        <ul class="author__urls">
+          <li><a href="mailto:toberjia@cs.washington.edu"><i class="fas fa-fw fa-envelope"></i><span>Email</span></a></li>
+          <li><a href="https://scholar.google.com/" target="_blank" rel="noopener"><i class="ai ai-google-scholar ai-fw"></i><span>Google Scholar</span></a></li>
+          <li><a href="https://github.com/ToberJ" target="_blank" rel="noopener"><i class="fab fa-fw fa-github"></i><span>GitHub</span></a></li>
+          <li><a href="https://www.linkedin.com/in/taoyang-jia-84842323a/" target="_blank" rel="noopener"><i class="fab fa-fw fa-linkedin"></i><span>LinkedIn</span></a></li>
+        </ul>
       </div>
+    </aside>
 
-      <h2>News</h2>
-      <ul>
-        <li><strong>[2026-2]</strong> Our work <a href="https://arxiv.org/abs/2510.09110">SOC</a> is accepted to CVPR 2026. See you in Denver!</li>
-      </ul>
+    <main class="main-content">
+      <article>
+        <h1>About</h1>
+        <p>I am an undergraduate student at the University of Washington, advised by Prof. <a href="http://www.ranjaykrishna.com/index.html">Ranjay Krishna</a> and PhD student <a href="https://jieyuz2.github.io/">Jieyu Zhang</a> at <a href="https://raivn.cs.washington.edu/">UW CSE RAIVN Lab</a>. Incoming MSCS at Stanford University.</p>
+        <p>My research interests lie in <strong>computer vision</strong> and <strong>embodied AI / robot learning</strong>, with a focus on building perception and decision-making systems that work robustly in the real world.</p>
 
-      <h2>Publications</h2>
-      <div class="section-header">
-        <span style="font-size: 0.85em; color: #888;">(* denotes equal contribution)</span>
-        <div class="view-toggle">
-          <button id="selectedBtn" class="active">Selected</button>
-          <button id="allBtn">All Publications</button>
+        <h2>News</h2>
+        <ul>
+          <li><strong>[2026-2]</strong> Our work <a href="https://arxiv.org/abs/2510.09110">SOC</a> is accepted to CVPR 2026. See you in Denver!</li>
+        </ul>
+
+        <h2>Publications</h2>
+        <div class="section-header">
+          <span style="font-size: 0.85em; color: #888;">(* denotes equal contribution)</span>
+          <div class="view-toggle">
+            <button id="selectedBtn" class="active">Selected</button>
+            <button id="allBtn">All Publications</button>
+          </div>
         </div>
-      </div>
-      <div id="publicationsList" class="publications-list">
-        <!-- loaded by publications.js -->
-      </div>
+        <div id="publicationsList" class="publications-list">
+          <!-- loaded by publications.js -->
+        </div>
 
-      <h2>Education</h2>
-      <ul>
-        <li><strong>Incoming at Stanford University</strong> &mdash; M.S. in Computer Science, 2026&ndash;2028
-           (Expected)</li>
-        <li><strong>University of Washington</strong> &mdash; B.S. in Computer Science, 2023&ndash;2026 (Expected)</li>
-      </ul>
+        <h2>Education</h2>
+        <ul>
+          <li><strong>Incoming at Stanford University</strong> &mdash; M.S. in Computer Science, 2026&ndash;2028
+             (Expected)</li>
+          <li><strong>University of Washington</strong> &mdash; B.S. in Computer Science, 2022&ndash;2026</li>
+        </ul>
 
-      <h2>Experience</h2>
-      <ul>
-        <li><strong>Undergraduate Researcher</strong>, UW CSE RAIVN Lab, 2025&ndash;Present</li>
-      </ul>
-    </article>
+        <h2>Experience</h2>
+        <ul>
+          <li><strong>Undergraduate Researcher</strong>, UW CSE RAIVN Lab, 2025&ndash;Present</li>
+        </ul>
+      </article>
+    </main>
   </div>
   <script src="assets/js/publications.js"></script>
 </body>

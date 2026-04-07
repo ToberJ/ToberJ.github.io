@@ -8,6 +8,10 @@
 {% seo %}
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome (icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Academicons (Google Scholar / Semantic Scholar / arXiv icons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -15,10 +19,35 @@
     {% include head-custom.html %}
   </head>
   <body>
-    <div class="container">
-      <article>
-        {{ content }}
-      </article>
+    <div class="site-wrapper">
+      <aside class="sidebar">
+        <div class="author-profile">
+          <div class="author__avatar">
+            <img src="{{ site.author.avatar | default: 'img/avatar-placeholder.svg' | relative_url }}" alt="{{ site.author.name }}" onerror="this.onerror=null;this.src='{{ '/img/avatar-placeholder.svg' | relative_url }}';">
+          </div>
+          <h3 class="author__name">{{ site.author.name }}</h3>
+          {% if site.author.bio %}<p class="author__bio">{{ site.author.bio }}</p>{% endif %}
+          <ul class="author__urls">
+            {% if site.author.email %}
+            <li><a href="mailto:{{ site.author.email }}"><i class="fas fa-fw fa-envelope"></i><span>Email</span></a></li>
+            {% endif %}
+            {% if site.author.googlescholar %}
+            <li><a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener"><i class="ai ai-google-scholar ai-fw"></i><span>Google Scholar</span></a></li>
+            {% endif %}
+            {% if site.author.github %}
+            <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener"><i class="fab fa-fw fa-github"></i><span>GitHub</span></a></li>
+            {% endif %}
+            {% if site.author.linkedin %}
+            <li><a href="{{ site.author.linkedin }}" target="_blank" rel="noopener"><i class="fab fa-fw fa-linkedin"></i><span>LinkedIn</span></a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </aside>
+      <main class="main-content">
+        <article>
+          {{ content }}
+        </article>
+      </main>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     <script src="{{ "/assets/js/publications.js" | relative_url }}"></script>
