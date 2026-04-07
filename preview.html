@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--
+  This file is for LOCAL PREVIEW ONLY.
+  It mirrors what GitHub Pages will render from index.md + _layouts/default.html.
+  Do not edit content here — edit index.md and the CSS will sync from assets/css/style.scss.
+-->
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taoyang Jia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fff;
+      padding: 0;
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+    h1, h2, h3, h4, h5, h6 { color: #222; margin: 0 0 20px; }
+    p, ul, ol { margin: 0 0 20px; }
+    h1, h2, h3 { line-height: 1.1; }
+    h1 { font-size: 28px; }
+    h2 { color: #393939; border-bottom: 1px solid #eee; padding-bottom: 0.3rem; margin-top: 2rem; }
+    a { color: #267CB9; text-decoration: none; }
+    a:hover { color: #069; }
+    strong { color: #222; font-weight: 700; }
+
+    .profile-header { display: flex; align-items: flex-start; gap: 30px; margin-bottom: 1.5rem; }
+    .profile-text { flex: 1; }
+    .profile-text h1 { margin-bottom: 0.3rem; }
+    .profile-text .subtitle { color: #666; font-size: 0.95rem; margin-bottom: 0.8rem; }
+    .profile-text .bio { font-size: 0.95rem; line-height: 1.65; color: #374151; margin-bottom: 0.8rem; }
+    .profile-links { font-size: 0.92rem; margin-bottom: 0; }
+    .profile-links a { color: #267CB9; }
+    .profile-links a:hover { text-decoration: underline; }
+
+    h2 ~ ul, h2 ~ p { font-size: 0.95rem; line-height: 1.65; }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .view-toggle { display: flex; gap: 0.5rem; }
+    .view-toggle button {
+      padding: 0.35rem 0.85rem;
+      border: 1px solid #e5e7eb;
+      background: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 500;
+      font-family: inherit;
+      transition: all 0.2s;
+      color: #5a5a5a;
+    }
+    .view-toggle button.active { background: #2563eb; color: white; border-color: #2563eb; }
+    .view-toggle button:hover:not(.active) { background: #f3f4f6; }
+
+    .publication-item {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #eee;
+      font-size: 0.93em;
+    }
+    .publication-item:last-child { border-bottom: none; }
+
+    .publication-image {
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background: #f3f4f6;
+    }
+    .publication-image img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+      transform: translate(-50%, -50%);
+    }
+    .publication-image:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .publication-content { display: flex; flex-direction: column; gap: 0.5rem; }
+    .publication-title { font-size: 1rem; font-weight: 600; color: #222; line-height: 1.4; }
+    .publication-title a { color: inherit; }
+    .publication-title a:hover { color: #2563eb; }
+    .publication-authors { font-size: 0.9rem; color: #555; line-height: 1.5; }
+    .publication-authors strong { color: #1f2937; font-weight: 600; }
+    .publication-venue { font-size: 0.9rem; color: #555; }
+    .publication-venue strong { font-weight: 600; color: #1f2937; }
+
+    .publication-links { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
+    .publication-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0.65rem;
+      background: #f9fafb;
+      border-radius: 16px;
+      color: #1f2937;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .publication-links a:hover {
+      background: #2563eb;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 3px 8px rgba(37, 99, 235, 0.2);
+    }
+
+    .publication-tldr {
+      font-size: 0.9rem;
+      color: #5a5a5a;
+      line-height: 1.6;
+      padding: 0.75rem;
+      background: #f9fafb;
+      border-radius: 5px;
+      margin-top: 0.3rem;
+      position: relative;
+    }
+    .publication-tldr strong { color: #1f2937; }
+    .tldr-content { position: relative; overflow: hidden; transition: max-height 0.3s ease; }
+    .publication-tldr.collapsed .tldr-content {
+      max-height: 1.6em;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .publication-tldr.expanded .tldr-content { max-height: none; }
+    .publication-tldr.collapsed .tldr-content::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 60px;
+      height: 1.6em;
+      background: linear-gradient(to right, transparent, #f9fafb 50%);
+      pointer-events: none;
+    }
+    .tldr-toggle {
+      position: absolute;
+      bottom: 0.75rem;
+      right: 0.75rem;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 0.85rem;
+      color: #2563eb;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .tldr-toggle:hover { background: #f3f4f6; }
+
+    @media screen and (max-width: 600px) {
+      .container { padding: 24px 16px 40px; }
+      .profile-header { flex-direction: column; gap: 20px; }
+      .section-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+      .publication-item { grid-template-columns: 1fr; gap: 1rem; }
+      .publication-tldr { padding-bottom: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <article>
+      <div class="profile-header">
+        <div class="profile-text">
+          <h1><span style="font-weight: 700;">Taoyang</span> Jia</h1>
+          <p class="subtitle">Undergrad @ UW CSE RAIVN Lab</p>
+          <p class="bio">I am an undergraduate student at the University of Washington, advised by Prof. <a href="http://www.ranjaykrishna.com/index.html">Ranjay Krishna</a> and PhD student <a href="https://jieyuz2.github.io/">Jieyu Zhang</a> at <a href="https://raivn.cs.washington.edu/">UW CSE RAIVN Lab</a>.</p>
+          <p class="bio">My research interests lie in <strong>computer vision</strong> and <strong>embodied AI / robot learning</strong>, with a focus on building perception and decision-making systems that work robustly in the real world.</p>
+          <p class="profile-links"><a href="mailto:toberjia@cs.washington.edu">Email</a> / <a href="https://github.com/toberjia" target="_blank">GitHub</a> / <a href="https://scholar.google.com/" target="_blank">Google Scholar</a></p>
+        </div>
+      </div>
+
+      <h2>News</h2>
+      <ul>
+        <li><strong>[2026-2]</strong> Our work <a href="https://arxiv.org/abs/2510.09110">SOC</a> is accepted to CVPR 2026. See you in Denver!</li>
+      </ul>
+
+      <h2>Publications</h2>
+      <div class="section-header">
+        <span style="font-size: 0.85em; color: #888;">(* denotes equal contribution)</span>
+        <div class="view-toggle">
+          <button id="selectedBtn" class="active">Selected</button>
+          <button id="allBtn">All Publications</button>
+        </div>
+      </div>
+      <div id="publicationsList" class="publications-list">
+        <!-- loaded by publications.js -->
+      </div>
+
+      <h2>Education</h2>
+      <ul>
+        <li><strong>University of Washington</strong> &mdash; B.S. in Computer Science, 2023&ndash;2027 (Expected)</li>
+      </ul>
+
+      <h2>Experience</h2>
+      <ul>
+        <li><strong>Undergraduate Researcher</strong>, UW CSE RAIVN Lab, 2025&ndash;Present</li>
+      </ul>
+    </article>
+  </div>
+  <script src="assets/js/publications.js"></script>
+</body>
+</html>
