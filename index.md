@@ -8,7 +8,7 @@ layout: default
     <p class="subtitle">Undergrad @ UW CSE RAIVN Lab</p>
     <p class="bio">I am an undergraduate student at the University of Washington, advised by Prof. <a href="http://www.ranjaykrishna.com/index.html">Ranjay Krishna</a> and PhD student <a href="https://jieyuz2.github.io/">Jieyu Zhang</a> at <a href="https://raivn.cs.washington.edu/">UW CSE RAIVN Lab</a>.</p>
     <p class="bio">My research interests lie in <strong>computer vision</strong> and <strong>embodied AI / robot learning</strong>, with a focus on building perception and decision-making systems that work robustly in the real world.</p>
-    <p class="profile-links"><a href="mailto:toberjia@cs.washington.edu">Email</a> / <a href="https://github.com/toberjia" target="_blank">GitHub</a> / <a href="https://scholar.google.com/" target="_blank">Google Scholar</a></p>
+    <p class="profile-links"><a href="mailto:toberjia@cs.washington.edu">Email</a> / <a href="https://github.com/ToberJ" target="_blank">GitHub</a> / <a href="https://scholar.google.com/" target="_blank">Google Scholar</a></p>
   </div>
 </div>
 
