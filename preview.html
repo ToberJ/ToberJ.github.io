@@ -108,6 +108,11 @@
 
     h2 ~ ul, h2 ~ p { font-size: 0.95rem; line-height: 1.65; }
 
+    .education-list { list-style: disc; padding-left: 1.4rem; }
+    .education-list li { margin-bottom: 0.9rem; line-height: 1.6; }
+    .education-list li:last-child { margin-bottom: 0; }
+    .education-list em { color: #4b5563; font-style: italic; }
+
     .section-header {
       display: flex;
       justify-content: space-between;
@@ -287,13 +292,13 @@
     <aside class="sidebar">
       <div class="author-profile">
         <div class="author__avatar">
-          <img src="img/taoyang.jpg" alt="Taoyang Jia" onerror="this.onerror=null;this.src='img/avatar-placeholder.svg';">
+          <img src="img/taoyang.png" alt="Taoyang Jia" onerror="this.onerror=null;this.src='img/avatar-placeholder.svg';">
         </div>
         <h3 class="author__name">Taoyang Jia</h3>
         <p class="author__bio">Incoming MSCS @ Stanford<br>Undergrad @ UW CSE RAIVN Lab</p>
         <ul class="author__urls">
           <li><a href="mailto:toberjia@cs.washington.edu"><i class="fas fa-fw fa-envelope"></i><span>Email</span></a></li>
-          <li><a href="https://scholar.google.com/" target="_blank" rel="noopener"><i class="ai ai-google-scholar ai-fw"></i><span>Google Scholar</span></a></li>
+          <li><a href="https://scholar.google.com/citations?user=jll93-IAAAAJ&hl=en" target="_blank" rel="noopener"><i class="ai ai-google-scholar ai-fw"></i><span>Google Scholar</span></a></li>
           <li><a href="https://github.com/ToberJ" target="_blank" rel="noopener"><i class="fab fa-fw fa-github"></i><span>GitHub</span></a></li>
           <li><a href="https://www.linkedin.com/in/taoyang-jia-84842323a/" target="_blank" rel="noopener"><i class="fab fa-fw fa-linkedin"></i><span>LinkedIn</span></a></li>
         </ul>
@@ -324,10 +329,16 @@
         </div>
 
         <h2>Education</h2>
-        <ul>
-          <li><strong>Incoming at Stanford University</strong> &mdash; M.S. in Computer Science, 2026&ndash;2028
-             (Expected)</li>
-          <li><strong>University of Washington</strong> &mdash; B.S. in Computer Science, 2022&ndash;2026</li>
+        <ul class="education-list">
+          <li>
+            <strong>Stanford University</strong>, <em>2026&ndash;2028 (Expected)</em><br>
+            <em>Master of Science in Computer Science</em>
+          </li>
+          <li>
+            <strong>University of Washington</strong>, <em>2022&ndash;2026</em><br>
+            <em>Bachelor of Science in Computer Science</em><br>
+            <em>Bachelor of Science in Applied Mathematics</em>
+          </li>
         </ul>
 
         <h2>Experience</h2>

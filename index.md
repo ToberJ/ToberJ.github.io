@@ -26,8 +26,17 @@ My research interests lie in **computer vision** and **embodied AI / robot learn
 </div>
 
 ## Education
-- **Incoming at Stanford University** — M.S. in Computer Science, 2026–2028 (Expected)
-- **University of Washington** — B.S. in Computer Science, 2022–2026
+<ul class="education-list">
+  <li>
+    <strong>Stanford University</strong>, <em>2026&ndash;2028 (Expected)</em><br>
+    <em>Master of Science in Computer Science</em>
+  </li>
+  <li>
+    <strong>University of Washington</strong>, <em>2022&ndash;2026</em><br>
+    <em>Bachelor of Science in Computer Science</em><br>
+    <em>Bachelor of Science in Applied Mathematics</em>
+  </li>
+</ul>
 
 ## Experience
 - **Undergraduate Researcher**, UW CSE RAIVN Lab, 2025–Present

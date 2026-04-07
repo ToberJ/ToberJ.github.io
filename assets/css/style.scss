@@ -247,6 +247,23 @@ h2 ~ ul, h2 ~ p {
   line-height: 1.65;
 }
 
+/* Education list (CV-style multi-line entries) */
+.education-list {
+  list-style: disc;
+  padding-left: 1.4rem;
+}
+.education-list li {
+  margin-bottom: 0.9rem;
+  line-height: 1.6;
+}
+.education-list li:last-child {
+  margin-bottom: 0;
+}
+.education-list em {
+  color: #4b5563;
+  font-style: italic;
+}
+
 blockquote {
   border-left:1px solid #e5e5e5;
   margin:0;
