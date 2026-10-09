@@ -22,9 +22,6 @@
         "website": "https://toberj.github.io/reflex/",
         "code": "https://github.com/ToberJ/reflex"
       },
-      "link_labels": {
-        "code": "Code (coming soon)"
-      },
       "selected": true,
       "tldr": "A Unitree G1 humanoid catches human-thrown boxes of different sizes and payloads from 2.5 to 7 m using onboard RGB-D sensing."
     },
