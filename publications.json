@@ -1,6 +1,34 @@
 {
   "publications": [
     {
+      "id": "reflex",
+      "title": "Reflex: Visually Grounded Reactive Humanoid Control",
+      "authors": [
+        "Taoyang Jia*",
+        "Weikai Huang*",
+        "Linxin Song*",
+        "Jared Darlington",
+        "Jieyu Zhao",
+        "Yue Wang",
+        "Jiafei Duan",
+        "Zhongzheng Ren",
+        "Ranjay Krishna"
+      ],
+      "venue": "Preprint",
+      "year": "2026",
+      "image": "img/papers/reflex.png",
+      "links": {
+        "paper": "https://toberj.github.io/reflex/static/paper/reflex.pdf",
+        "website": "https://toberj.github.io/reflex/",
+        "code": "https://github.com/ToberJ/reflex"
+      },
+      "link_labels": {
+        "code": "Code (coming soon)"
+      },
+      "selected": true,
+      "tldr": "A Unitree G1 humanoid catches human-thrown boxes of different sizes and payloads from 2.5 to 7 m using onboard RGB-D sensing."
+    },
+    {
       "id": "wilddet3d",
       "title": "WildDet3D: Scaling Promptable 3D Detection in the Wild",
       "authors": [

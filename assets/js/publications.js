@@ -55,8 +55,8 @@ function createPublicationHTML(pub) {
         author.includes(MY_NAME) ? `<strong>${author}</strong>` : author
     ).join(', ');
 
-    // Order: arXiv first, then Code, then others
-    const linkOrder = ['arxiv', 'code', 'paper', 'website', 'huggingface', 'demo', 'blog', 'talk', 'data', 'models'];
+    // Order: arXiv / Paper first, then Code, then others
+    const linkOrder = ['arxiv', 'paper', 'code', 'website', 'huggingface', 'demo', 'blog', 'talk', 'data', 'models'];
     const linkLabels = {
         'paper': 'Paper',
         'arxiv': 'arXiv',
@@ -73,7 +73,7 @@ function createPublicationHTML(pub) {
     const linksHtml = linkOrder
         .filter(key => pub.links && pub.links[key])
         .map(key => {
-            const label = linkLabels[key] || key.charAt(0).toUpperCase() + key.slice(1);
+            const label = (pub.link_labels && pub.link_labels[key]) || linkLabels[key] || key.charAt(0).toUpperCase() + key.slice(1);
             return `<a href="${pub.links[key]}" target="_blank">${label}</a>`;
         })
         .join('');
