@@ -11,3 +11,6 @@ author:
   googlescholar: https://scholar.google.com/citations?user=jll93-IAAAAJ&hl=en
   github: ToberJ
   linkedin: https://www.linkedin.com/in/taoyang-jia-84842323a/
+
+exclude:
+  - README.md

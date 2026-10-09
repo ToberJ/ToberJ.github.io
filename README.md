@@ -5,16 +5,16 @@ Source code for my personal academic website, built with Jekyll and GitHub Pages
 ## Setup
 
 ### 1. Create the GitHub repo
-On GitHub, create a new repository named **`toberjia.github.io`** (must match your GitHub username exactly). Once you push to it, GitHub Pages will automatically build and serve the site at `https://toberjia.github.io`.
+On GitHub, create a new repository named **`ToberJ.github.io`** (must match your GitHub username). Once you push to it, GitHub Pages will automatically build and serve the site at `https://toberj.github.io`.
 
 ### 2. Push this folder
 ```bash
-cd toberjia.github.io
+cd ToberJ.github.io
 git init
 git add .
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/toberjia/toberjia.github.io.git
+git remote add origin https://github.com/ToberJ/ToberJ.github.io.git
 git push -u origin main
 ```
 
@@ -59,13 +59,13 @@ Edit `publications.json`. Each entry looks like:
 - Drop the paper teaser image into `img/papers/`
 
 ### Profile photo
-Replace `img/taoyang.jpg` with your photo (keep the same filename, or update the references in `index.md` and `_config.yml`).
+Replace `img/taoyang.png` with your photo (keep the same filename, or update the references in `_config.yml`).
 
 ### CV
-Drop your CV PDF at `files/taoyang_cv.pdf` (the link in `index.md` already points there).
+No CV is linked yet. To add one, put the PDF at `files/taoyang_cv.pdf` and add a link to it.
 
 ### Email / social links
-Update the `profile-links` line in `index.md` (currently has placeholder `YOUR_EMAIL@cs.washington.edu`).
+Email, Google Scholar, GitHub and LinkedIn are set under `author:` in `_config.yml`.
 
 ## File Structure
 
@@ -76,10 +76,8 @@ Update the `profile-links` line in `index.md` (currently has placeholder `YOUR_E
 │   ├── css/style.scss     # Styles
 │   └── js/publications.js # Publication renderer
 ├── img/
-│   ├── taoyang.jpg        # Profile photo (add this)
+│   ├── taoyang.png        # Profile photo
 │   └── papers/            # Paper teaser images
-├── files/
-│   └── taoyang_cv.pdf     # CV (add this)
 ├── publications.json      # Publication data
 ├── index.md               # Main page
 └── _config.yml            # Jekyll config

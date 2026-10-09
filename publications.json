@@ -51,11 +51,12 @@
         "Zhongzheng Ren\u2665",
         "Ranjay Krishna\u2665"
       ],
-      "venue": "Arxiv",
+      "venue": "arXiv",
       "year": "2026",
       "video": "https://www.youtube.com/watch?v=RgHKmOqb7I4",
       "github_repo": "allenai/WildDet3D",
       "links": {
+        "arxiv": "https://arxiv.org/abs/2604.08626",
         "website": "https://allenai.github.io/WildDet3D/",
         "code": "https://github.com/allenai/WildDet3D",
         "huggingface": "https://huggingface.co/collections/allenai/wilddet3d-69d42220ec4f942f1951263e",
