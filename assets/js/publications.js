@@ -135,8 +135,8 @@ function createPublicationHTML(pub) {
         .join('');
 
     let imageHtml = '';
-    if (pub.video && /\\.(mp4|webm)(\\?.*)?$/i.test(pub.video)) {
-        const videoType = /\\.webm(\\?|$)/i.test(pub.video) ? 'video/webm' : 'video/mp4';
+    if (pub.video && /\.(mp4|webm)(\?.*)?$/i.test(pub.video)) {
+        const videoType = /\.webm(\?|$)/i.test(pub.video) ? 'video/webm' : 'video/mp4';
         imageHtml = `<button type="button"
                          class="publication-image publication-video publication-video-trigger"
                          data-video-src="${pub.video}"
