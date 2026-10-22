@@ -48,6 +48,62 @@ function displayPublications() {
         : publicationsData;
 
     container.innerHTML = publications.map(pub => createPublicationHTML(pub)).join('');
+    observePublicationVideos(container);
+}
+
+let publicationVideoObserver = null;
+
+function observePublicationVideos(container) {
+    if (publicationVideoObserver) publicationVideoObserver.disconnect();
+    const videos = container.querySelectorAll('.publication-video-trigger video');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducedMotion || !('IntersectionObserver' in window)) return;
+
+    publicationVideoObserver = new IntersectionObserver(entries => {
+        for (const entry of entries) {
+            const video = entry.target;
+            if (entry.isIntersecting) {
+                const playing = video.play();
+                if (playing) playing.catch(() => {});
+            } else {
+                video.pause();
+            }
+        }
+    }, { threshold: 0.35 });
+    videos.forEach(video => publicationVideoObserver.observe(video));
+}
+
+function initializePublicationVideoLightbox(container) {
+    // The preview stays muted; users may unmute the enlarged video.
+    const dialog = document.createElement('dialog');
+    dialog.className = 'publication-video-lightbox';
+    dialog.innerHTML = `<button type="button" class="publication-video-close" aria-label="Close video">Close ×</button>
+                        <video controls muted loop playsinline></video>`;
+    document.body.appendChild(dialog);
+    const fullVideo = dialog.querySelector('video');
+    const close = () => {
+        fullVideo.pause();
+        fullVideo.removeAttribute('src');
+        fullVideo.load();
+        if (dialog.open) dialog.close();
+    };
+    dialog.querySelector('.publication-video-close').addEventListener('click', close);
+    dialog.addEventListener('click', event => { if (event.target === dialog) close(); });
+    dialog.addEventListener('close', () => {
+        fullVideo.pause();
+        fullVideo.removeAttribute('src');
+        fullVideo.load();
+    });
+    container.addEventListener('click', event => {
+        const button = event.target.closest('.publication-video-trigger');
+        if (!button || !container.contains(button)) return;
+        const preview = button.querySelector('video');
+        if (preview) preview.pause();
+        fullVideo.src = button.dataset.videoSrc;
+        dialog.showModal();
+        const playing = fullVideo.play();
+        if (playing) playing.catch(() => {});
+    });
 }
 
 function createPublicationHTML(pub) {
@@ -79,12 +135,24 @@ function createPublicationHTML(pub) {
         .join('');
 
     let imageHtml = '';
-    if (pub.video) {
+    if (pub.video && /\.(mp4|webm)(\?.*)?$/i.test(pub.video)) {
+        const videoType = /\.webm(\?|$)/i.test(pub.video) ? 'video/webm' : 'video/mp4';
+        imageHtml = `<button type="button"
+                         class="publication-image publication-video publication-video-trigger"
+                         data-video-src="${pub.video}"
+                         aria-label="Expand video for ${pub.title}">
+                         <video muted loop playsinline preload="metadata" ${pub.image ? `poster="${pub.image}"` : ''}>
+                           <source src="${pub.video}" type="${videoType}">
+                         </video>
+                         <span class="publication-video-expand" aria-hidden="true">↗ Expand</span>
+                       </button>`;
+    } else if (pub.video) {
+        // Keep support for YouTube videos used by other publication entries.
         let videoId = '';
         if (pub.video.includes('youtube.com') || pub.video.includes('youtu.be')) {
             try {
-                const urlParams = new URLSearchParams(new URL(pub.video).search);
-                videoId = urlParams.get('v') || pub.video.split('/').pop().split('?')[0];
+                const parsed = new URL(pub.video);
+                videoId = parsed.searchParams.get('v') || parsed.pathname.split('/').pop();
             } catch (e) {
                 videoId = pub.video.split('/').pop().split('?')[0];
             }
@@ -92,9 +160,10 @@ function createPublicationHTML(pub) {
         if (videoId) {
             imageHtml = `<div class="publication-image publication-video">
                            <iframe
-                             src="https://www.youtube.com/embed/${videoId}"
-                             frameborder="0"
-                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                             src="https://www.youtube-nocookie.com/embed/${videoId}?mute=1&loop=1&playlist=${videoId}&playsinline=1"
+                             title="${pub.title} demo video"
+                             loading="lazy"
+                             allow="autoplay; encrypted-media; picture-in-picture"
                              allowfullscreen>
                            </iframe>
                          </div>`;
@@ -160,6 +229,8 @@ function toggleTldr(pubId) {
 
 document.addEventListener('DOMContentLoaded', () => {
     loadPublications();
+    const publicationList = document.getElementById('publicationsList');
+    if (publicationList) initializePublicationVideoLightbox(publicationList);
 
     const selectedBtn = document.getElementById('selectedBtn');
     const allBtn = document.getElementById('allBtn');
