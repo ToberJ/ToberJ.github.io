@@ -24,7 +24,9 @@
       },
       "selected": true,
       "tldr": "A Unitree G1 humanoid catches human-thrown boxes of different sizes and payloads from 2.5 to 7 m using onboard RGB-D sensing.",
-      "video": "https://toberj.github.io/reflex/static/videos/teaser.mp4"
+      "video": "https://toberj.github.io/reflex/static/videos/teaser.mp4",
+      "award": "Best Paper Award — RoboLetics 3.0 Workshop @ CoRL 2026",
+      "award_url": "https://roboletics.github.io/corl2026/#awards"
     },
     {
       "id": "wilddet3d",
