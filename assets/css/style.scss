@@ -538,17 +538,14 @@ hr {
   color: #1f2937;
 }
 
-/* Best Paper Award first in bold red, followed by the workshop in black. */
+/* Workshop name first in bold black; Best Paper Award in bold red parentheses. */
 .publication-award {
   font-size: 0.93rem;
   line-height: 1.45;
 }
-.publication-award a {
-  color: #1f2937;
-  text-decoration: none;
-}
-.publication-award .publication-award-label { color: #e53935; font-weight: 700; }
-.publication-award .publication-award-event { color: #1f2937; font-weight: 400; }
+.publication-award a { color: #1f2937; text-decoration: none; }
+.publication-award .publication-award-event { color: #171717; font-weight: 700; }
+.publication-award .publication-award-label { color: #e60000; font-weight: 700; }
 .publication-award a:hover { text-decoration: underline; }
 
 .announcement-banner {
