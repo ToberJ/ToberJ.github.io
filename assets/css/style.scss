@@ -247,6 +247,14 @@ h2 ~ ul, h2 ~ p {
   line-height: 1.65;
 }
 
+/* Emphasize the official Reflex Best Paper announcement in News. */
+a.news-award,
+a.news-award:visited {
+  color: #e60000;
+  font-weight: 700;
+}
+a.news-award:hover { color: #ba0000; }
+
 /* Education list (CV-style multi-line entries) */
 .education-list {
   list-style: disc;
