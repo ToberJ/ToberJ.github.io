@@ -9,7 +9,9 @@ I am an MSCS student at Stanford University, currently working with Prof. <a hre
 My research interests lie in **computer vision** and **embodied AI / robot learning**, with a focus on building perception and decision-making systems that work robustly in the real world. Most recently, I have been working on vision-based reactive whole-body control for humanoid robots.
 
 ## News
+- **[2026-11]** Our paper [Reflex](https://toberj.github.io/reflex/) received the [Best Paper Award](https://roboletics.github.io/corl2026/#awards) at the RoboLetics 3.0 Workshop at CoRL 2026.
 - **[2026-10]** [Reflex](https://toberj.github.io/reflex/) released! A Unitree G1 humanoid catches human-thrown boxes of different sizes and payloads from 2.5 to 7 m using onboard RGB-D sensing. Read the [paper](https://toberj.github.io/reflex/static/paper/reflex.pdf).
+- **[2026-9]** Joined [Stanford The Movement Lab](https://tml.stanford.edu/) as a graduate researcher, working with Prof. [C. Karen Liu](https://profiles.stanford.edu/c-karen-liu).
 - **[2026-4]** [WildDet3D](https://github.com/allenai/WildDet3D) released! Promptable 3D detection in the wild with text, box, and point prompts. Try the [demo](https://huggingface.co/spaces/allenai/WildDet3D) or download the [iPhone app](https://apps.apple.com/us/app/wilddet3d/id6760861157).
 - **[2026-2]** Our work [SOC](https://arxiv.org/abs/2510.09110) is accepted to CVPR 2026.
 
