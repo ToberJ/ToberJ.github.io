@@ -538,18 +538,17 @@ hr {
   color: #1f2937;
 }
 
-/* Workshop venue in black with its paper award in red, matching the project page. */
+/* Best Paper Award first in bold red, followed by the workshop in black. */
 .publication-award {
   font-size: 0.93rem;
-  font-weight: 600;
   line-height: 1.45;
 }
 .publication-award a {
   color: #1f2937;
   text-decoration: none;
 }
-.publication-award .publication-award-event { color: #1f2937; }
-.publication-award .publication-award-label { color: #e60000; }
+.publication-award .publication-award-label { color: #e53935; font-weight: 700; }
+.publication-award .publication-award-event { color: #1f2937; font-weight: 400; }
 .publication-award a:hover { text-decoration: underline; }
 
 .announcement-banner {
