@@ -538,6 +538,21 @@ hr {
   color: #1f2937;
 }
 
+/* Award annotation for selected publications, linked to the workshop's official results. */
+.publication-award {
+  font-size: 0.87rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.publication-award a {
+  color: #85621a;
+  text-decoration: none;
+}
+.publication-award a:hover {
+  color: #674b11;
+  text-decoration: underline;
+}
+
 .announcement-banner {
   color: #b91c1c;
   font-size: 0.9rem;
