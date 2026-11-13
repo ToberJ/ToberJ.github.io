@@ -538,20 +538,19 @@ hr {
   color: #1f2937;
 }
 
-/* Award annotation for selected publications, linked to the workshop's official results. */
+/* Workshop venue in black with its paper award in red, matching the project page. */
 .publication-award {
-  font-size: 0.87rem;
+  font-size: 0.93rem;
   font-weight: 600;
   line-height: 1.45;
 }
 .publication-award a {
-  color: #85621a;
+  color: #1f2937;
   text-decoration: none;
 }
-.publication-award a:hover {
-  color: #674b11;
-  text-decoration: underline;
-}
+.publication-award .publication-award-event { color: #1f2937; }
+.publication-award .publication-award-label { color: #e60000; }
+.publication-award a:hover { text-decoration: underline; }
 
 .announcement-banner {
   color: #b91c1c;
