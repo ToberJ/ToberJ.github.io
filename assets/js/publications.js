@@ -175,6 +175,9 @@ function createPublicationHTML(pub) {
     }
 
     const additionalVenueHtml = pub.additional_venue ? `<br>& ${pub.additional_venue}` : '';
+    const awardHtml = pub.award
+        ? `<div class="publication-award"><a href="${pub.award_url || '#'}" target="_blank" rel="noopener noreferrer">🏆 ${pub.award}</a></div>`
+        : '';
 
     const tldrHtml = pub.tldr ? `
         <div class="publication-tldr collapsed" id="tldr-${pub.id}">
@@ -201,6 +204,7 @@ function createPublicationHTML(pub) {
                 <div class="publication-venue">
                     <strong>${pub.venue}</strong> ${pub.year}${additionalVenueHtml}
                 </div>
+                ${awardHtml}
                 ${linksHtml ? `<div class="publication-links">${linksHtml}</div>` : ''}
                 ${tldrHtml}
             </div>
