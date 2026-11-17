@@ -9,6 +9,7 @@ I am an MSCS student at Stanford University, currently working with Prof. <a hre
 My research interests lie in **computer vision** and **embodied AI / robot learning**, with a focus on building perception and decision-making systems that work robustly in the real world. Most recently, I have been working on vision-based reactive whole-body control for humanoid robots.
 
 ## News
+- **[2026-11]** Our paper [Reflex](https://toberj.github.io/reflex/) won the <a class="news-award" href="https://contact-rich-loco-manipulation.github.io/program/#best-poster" target="_blank" rel="noopener noreferrer">Best Poster Award</a> at the Open Problems in Contact-Rich Loco-Manipulation Workshop @ CoRL 2026.
 - **[2026-11]** Our paper [Reflex](https://toberj.github.io/reflex/) was presented as an **oral talk** at the [SimBench2Real Workshop @ CoRL 2026](https://corl2026-realworld-robot-learning.github.io/).
 - **[2026-11]** Our paper [Reflex](https://toberj.github.io/reflex/) received the <a class="news-award" href="https://roboletics.github.io/corl2026/#awards" target="_blank" rel="noopener noreferrer">Best Paper Award</a> at the RoboLetics 3.0 Workshop at CoRL 2026.
 - **[2026-10]** [Reflex](https://toberj.github.io/reflex/) released! A Unitree G1 humanoid catches human-thrown boxes of different sizes and payloads from 2.5 to 7 m using onboard RGB-D sensing. Read the [paper](https://toberj.github.io/reflex/static/paper/reflex.pdf).

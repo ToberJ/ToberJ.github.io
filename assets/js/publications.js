@@ -175,9 +175,11 @@ function createPublicationHTML(pub) {
     }
 
     const additionalVenueHtml = pub.additional_venue ? `<br>& ${pub.additional_venue}` : '';
-    const awardHtml = pub.award
+    const awardHtml = (pub.award
         ? `<div class="publication-award"><a href="${pub.award_url || '#'}" target="_blank" rel="noopener noreferrer"><span class="publication-award-event">${pub.award_event || ''}</span> <span class="publication-award-label">(${pub.award})</span></a></div>`
-        : '';
+        : '') + (pub.poster_award
+        ? `<div class="publication-award"><a href="${pub.poster_award_url || '#'}" target="_blank" rel="noopener noreferrer"><span class="publication-award-event">${pub.poster_award_event || ''}</span> <span class="publication-award-label">(${pub.poster_award})</span></a></div>`
+        : '');
 
     const tldrHtml = pub.tldr ? `
         <div class="publication-tldr collapsed" id="tldr-${pub.id}">
